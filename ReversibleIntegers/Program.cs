@@ -20,6 +20,11 @@ namespace ReversibleIntegers {
         /// <param name="args">Command line parameters are not used in this program</param>
         static void Main(string[] args) {
             
+            // ----- Initializing ----- //
+
+            //Inputs
+            int n = 1000;
+
             //Dictionary to keep track of the reversibles
             Dictionary<int,int> reversibles = new Dictionary<int,int>();
             
@@ -30,7 +35,7 @@ namespace ReversibleIntegers {
             // ----- Finding all the reversible numbers in the given set ----- //
 
             //Looping through all the numbers below 1000
-            for (int i = 1; i < 10000000; i++) {
+            for (int i = 1; i < n; i++) {
 
                 //Skipping multiples of ten as leading/trailing zeros are not allowed
                 if (i % 10 == 0) continue;
@@ -50,7 +55,7 @@ namespace ReversibleIntegers {
             Console.WriteLine("Elapsed Ticks: " + s.ElapsedTicks);
             Console.WriteLine("Elapsed Milleseconds: " + s.ElapsedMilliseconds);
 
-            // ----- Writing results to a file ----- //
+            // ----- Writing results to a file & Console ----- //
             string filetext = "";
             int count = 0;
             foreach (KeyValuePair<int, int> pair in reversibles) {
@@ -60,13 +65,14 @@ namespace ReversibleIntegers {
             filetext +="Elapsed Ticks: " + s.ElapsedTicks;
             filetext +="\nElapsed Milleseconds: " + s.ElapsedMilliseconds;
             Program.WriteFile(filetext);
+            Console.WriteLine(filetext);
 
             //Writing stats to the console
             Console.WriteLine("\nTime to Write Results");
             Console.WriteLine("Elapsed Ticks: " + s.ElapsedTicks);
             Console.WriteLine("Elapsed Milleseconds: " + s.ElapsedMilliseconds);            
                         
-            //Pausing
+            //Pausing at the end
             Console.ReadLine();
         }
 
