@@ -1,5 +1,5 @@
 ﻿/* 
- * Reversible Integers Program
+ * Reversible Integers Algorithm
  * for the Qualtrics Professional Services Interview Puzzles
  * by Rob Moncur on 3/1/2013
  */
@@ -21,9 +21,18 @@ namespace ReversibleIntegers {
         static void Main(string[] args) {
             
             // ----- Initializing ----- //
-
-            //Inputs
-            int n = 1000;
+            int n;
+            try {
+                Console.WriteLine("Find all reversible integers below (positive integer): ");
+                n = int.Parse(Console.ReadLine());
+                if (n < 0) {
+                    Console.WriteLine("Invalid Input. Terminating Program.");
+                    return;
+                }
+            } catch (Exception e) {
+                Console.WriteLine("Invalid Input. Terminating Program.");
+                return;
+            }
 
             //Dictionary to keep track of the reversibles
             Dictionary<int,int> reversibles = new Dictionary<int,int>();
@@ -31,6 +40,7 @@ namespace ReversibleIntegers {
             //Stopwatch to time the algorithm
             Stopwatch s = new Stopwatch();
             s.Start();
+            Console.WriteLine("Computing...");
 
             // ----- Finding all the reversible numbers in the given set ----- //
 
@@ -42,7 +52,7 @@ namespace ReversibleIntegers {
 
                 //Determining if this reversible has already been found
                 int ir = Program.ReverseInt(i);
-                if( reversibles.ContainsKey(ir)) continue;
+                if(reversibles.ContainsKey(ir)) continue;
 
                 //Determining if the number is reversible
                 if (Program.isReversible(i)) {
@@ -64,16 +74,21 @@ namespace ReversibleIntegers {
             }
             filetext +="Elapsed Ticks: " + s.ElapsedTicks;
             filetext +="\nElapsed Milleseconds: " + s.ElapsedMilliseconds;
+            s.Restart();
             Program.WriteFile(filetext);
+            s.Stop();
+            
+            //Writing output to the console
             Console.WriteLine(filetext);
 
             //Writing stats to the console
-            Console.WriteLine("\nTime to Write Results");
+            Console.WriteLine("\nTime to Write Results to results.txt");
             Console.WriteLine("Elapsed Ticks: " + s.ElapsedTicks);
             Console.WriteLine("Elapsed Milleseconds: " + s.ElapsedMilliseconds);            
                         
             //Pausing at the end
-            Console.ReadLine();
+            Console.WriteLine("\n\nProgram Complete.");
+            Console.ReadKey();
         }
 
         /// <summary>
