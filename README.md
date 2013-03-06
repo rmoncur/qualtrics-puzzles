@@ -5,7 +5,7 @@ Included here are two c# projects to complete the interview puzzles for the Prof
 
 MatrixSum
 --------
-The MatrixSum program computes the maximum matrix sum of an n x n matrix.
+The MatrixSum program computes the maximum matrix sum of an n x n matrix using the Hungarian Algorithm
 
 * Input is expected in a JSON array like such: [[7,53,183],[497,383,563],[287,63,169]]
 * All values of the JSON array should be positive or negative integers. Decimals will be cast as integers.
