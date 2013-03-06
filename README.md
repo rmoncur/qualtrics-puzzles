@@ -3,6 +3,10 @@ qualtrics-puzzles
 
 Included here are two c# projects to complete the interview puzzles for the Professional Services Group
 
+### System Requirements
+* Visual Studio 2010
+* .NET 4.0 (Required for the JSON parsing library)
+
 MatrixSum
 --------
 The MatrixSum program computes the maximum matrix sum of an n x n matrix using the Hungarian Algorithm
