@@ -1,15 +1,9 @@
 ﻿/* 
- * Reversible Integers Algorithm
+ * MatrixSum Algorithm
  * for the Qualtrics Professional Services Interview Puzzles
  * by Rob Moncur (robmonc@gmail.com) on 3/1/2013
  * 
- * Dear Qualtrics Code Reviewers,
- * Welcome to my code. This program computes the matrix sum for an n by n matrix with only integer values.
- * Any non-integer input will be cast to integers.
- * 
- * The Hungarian Algorithm to solve the matrix sum is not my explicit work, but is properly cited in it's header
- * 
- * Please let me know if you have any questions or comments. Thanks!
+ * See README.md for explanation of program
  */
 using System;
 using System.Collections.Generic;

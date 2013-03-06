@@ -2,6 +2,8 @@
  * Reversible Integers Algorithm
  * for the Qualtrics Professional Services Interview Puzzles
  * by Rob Moncur on 3/1/2013
+ * 
+ * See README.md for explanation of program
  */
 
 using System;
